@@ -1,4 +1,5 @@
 import Blog from "../../pages/Blog/Blog";
+import Ditails from "../../pages/Ditails/Ditails";
 import Home from "../../pages/Home/Home/Home";
 import AllImgCatagory from "../../pages/ServiceCagagory/AllImgCatagory";
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/details',
+                element: <Ditails></Ditails>
             }
         ]
     }
