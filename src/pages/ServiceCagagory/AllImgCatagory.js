@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import ServiceCart from './ServiceCart/ServiceCart';
+import ServiceCart from '../Home/Services/ServiceCart/ServiceCart';
 
-const Services = () => {
+const AllImgCatagory = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
@@ -10,12 +9,11 @@ const Services = () => {
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
-
     return (
         <div className=' container m-auto my-20'>
 
             <div className='text-center'>
-                <h3 className='text-4xl font-bold'>My Click service</h3>
+                <h3 className='text-4xl font-bold'>All Image Catagory</h3>
                 <p className='pt-5 text-1xl uppercase'> I am so pleased you have found my online home!</p>
             </div>
             services length{services.length}
@@ -28,11 +26,8 @@ const Services = () => {
                 }
 
             </div>
-            <div className='text-center mt-16'>
-                <Link to='/servicecatagory'><button className="btn btn-wide">ALL IMAGE</button></Link>
-            </div>
         </div>
     );
 };
 
-export default Services;
+export default AllImgCatagory;

@@ -27,12 +27,13 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal ">
                         <li><a className='text-white' href='/'>Home</a></li>
-                        <li tabIndex={0}>
-                            <a className='text-white' href='/'>
-                                Parent
+
+                        <li><a className='text-white' href='/servicecatagory'>service</a></li>
+                        <li >
+                            <a className='text-white' href='/blog'>
+                                Blog
                             </a>
                         </li>
-                        <li><a className='text-white' href='/'>service</a></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
