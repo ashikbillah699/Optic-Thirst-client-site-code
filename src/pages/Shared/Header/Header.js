@@ -6,7 +6,7 @@ import Logo from '../../../assets/logo/logo2.jpg'
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user, googleLogin } = useContext(AuthContext)
+    const { user, googleLogin, logOut } = useContext(AuthContext)
     const provider = new GoogleAuthProvider()
 
     const handleGooleLogin = () => {
@@ -16,6 +16,13 @@ const Header = () => {
                 console.log(user);
             })
             .catch(error => console.error(error))
+    }
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+
     }
 
     return (
@@ -56,7 +63,7 @@ const Header = () => {
                         <><ul className="menu menu-horizontal ">
                             <li><Link to='/myreviews' className='text-white' href='/servicecatagory'>My Reviews</Link></li>
                             <li><Link to='/addservice' className='text-white' href='/servicecatagory'>Add Service</Link></li>
-                            <Link to='/login'><button type="submit" className="btn mr-5">Log Out</button></Link>
+                            <Link to='/login'><button onClick={handleLogOut} type="submit" className="btn mr-5">Log Out</button></Link>
 
                         </ul></>
                         :
