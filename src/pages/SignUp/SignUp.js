@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
+    const { createSignUp } = useContext(AuthContext)
 
     const handleSignUp = event => {
         event.preventDefault()
@@ -10,6 +12,12 @@ const SignUp = () => {
         const password = form.password.value;
         console.log(name, email, password);
         form.reset();
+        createSignUp(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
     }
 
     return (
