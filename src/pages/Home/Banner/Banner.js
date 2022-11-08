@@ -16,6 +16,7 @@ const Banner = () => {
                     <h1 className='text-6xl text-white'>OPTIC THIRST - PHOTOGRAPHY</h1>
                     <h1 className='text-5xl text-white my-4'>CAPTURING NATURE LOVE</h1>
                     <h1 className='text-4xl text-white'>CREATING ART ,PASSION</h1>
+
                 </div>
                 <div className="w- absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide4" className="btn btn-circle">❮</a>

@@ -11,7 +11,7 @@ const ServiceCart = ({ service }) => {
                 <h2 className="card-title">{title}</h2>
                 <p>{
                     description.length > 100 ?
-                        <p> {description.slice(0, 100) + '...'} <Link className='text-sky-800' to='/details'>Read more</Link></p>
+                        <> {description.slice(0, 100) + '...'} <Link className='text-sky-800' to='/details'>Read more</Link></>
                         :
                         <>{description}</>
                 }</p>

@@ -1,8 +1,23 @@
-import React from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
+import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Logo from '../../../assets/logo/logo2.jpg'
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, googleLogin } = useContext(AuthContext)
+    const provider = new GoogleAuthProvider()
+
+    const handleGooleLogin = () => {
+        googleLogin(provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div className=" bg-black position sticky top-0 z-10">
             <div className="m-auto container navbar py-0">
@@ -37,7 +52,22 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a href='/' className="btn">Get started</a>
+                    {user?.uid ?
+                        <><ul className="menu menu-horizontal ">
+                            <li><Link to='/myreviews' className='text-white' href='/servicecatagory'>My Reviews</Link></li>
+                            <li><Link to='/addservice' className='text-white' href='/servicecatagory'>Add Service</Link></li>
+                            <Link to='/login'><button type="submit" className="btn mr-5">Log Out</button></Link>
+
+                        </ul></>
+                        :
+                        <>
+                            <Link to='/login'><button type="submit" className="btn mr-5">Login</button></Link>
+                            <Link to='/signup'><button type="submit" className="btn mr-5">Sign Up</button></Link>
+                            <button onClick={handleGooleLogin} className="btn btn-outline border-white  pr-14 text-1xl"><FaGoogle className='text-2xl pr-2'></FaGoogle> Login with Google</button>
+                        </>
+                    }
+
+
                 </div>
             </div>
         </div>
