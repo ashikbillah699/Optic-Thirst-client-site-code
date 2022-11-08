@@ -3,11 +3,11 @@ import About3 from '../../../assets/about/about5.jpg'
 
 const About = () => {
     return (
-        <div className="hero  bg-base-200">
+        <div className="hero mt-20">
             <div className="hero-content flex-col lg:flex-row">
-                <img alt='' src={About3} className=" rounded-lg shadow-2xl" />
+                <img alt='' src={About3} className="mr-8 rounded-lg shadow-2xl" />
                 <div>
-                    <h1 className="text-5xl font-bold">ABOUT ME</h1>
+                    <h1 className="text-4xl font-bold">ABOUT ME</h1>
                     <p className="py-6">YOU KNOW YOU WANT GREAT IMAGES...</p>
                     <p className="py-6 leading-7	">Hi, I am Nat from Mr Ashik Photography. I am so pleased you have found my online home!
                         I am a multi-award-winning Wedding and Family lifestyle photographer.

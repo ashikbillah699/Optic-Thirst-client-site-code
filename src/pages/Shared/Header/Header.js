@@ -4,7 +4,7 @@ import Logo from '../../../assets/logo/logo2.jpg'
 
 const Header = () => {
     return (
-        <div className=" bg-black">
+        <div className=" bg-black position sticky top-0 z-10">
             <div className="m-auto container navbar py-0">
                 <div className="navbar-start">
                     <div className="dropdown">
