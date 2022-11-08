@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
     const { createSignUp } = useContext(AuthContext)
+    const [error, setError] = useState('');
 
     const handleSignUp = event => {
         event.preventDefault()
@@ -15,9 +16,13 @@ const SignUp = () => {
         createSignUp(email, password)
             .then(result => {
                 const user = result.user;
+                setError('')
                 console.log(user);
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
     }
 
     return (
@@ -44,9 +49,9 @@ const SignUp = () => {
                                     <span className="label-text text-3xl">Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                                {/* <label className="label">
-                                <a href="/" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label> */}
+                                <label className="label">
+                                    {error}
+                                </label>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>

@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-
+    const navigate = useNavigate()
     const { login } = useContext(AuthContext)
+    const [error, setError] = useState('')
 
     const hanleLogin = event => {
         event.preventDefault()
@@ -16,8 +18,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('')
+                navigate('/')
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            })
     }
 
     return (
@@ -37,9 +44,9 @@ const Login = () => {
                                     <span className="label-text text-3xl">Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                                {/* <label className="label">
-                                <a href="/" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label> */}
+                                <label className="label">
+                                    {error}
+                                </label>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
