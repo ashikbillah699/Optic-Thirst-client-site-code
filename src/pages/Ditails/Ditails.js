@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import OrderRows from './OrderRow/OrderRows';
 
-const Ditails = (props) => {
+const Ditails = () => {
     const { _id, title, price, img, description } = useLoaderData();
     const { user } = useContext(AuthContext)
     const [orders, setOrders] = useState([]);
@@ -22,6 +22,7 @@ const Ditails = (props) => {
             service: _id,
             serviceName: { title },
             price,
+            serviceImage: { img },
             viwerName: name,
             photo,
             email,
