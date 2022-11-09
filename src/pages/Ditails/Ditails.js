@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import OrderRows from './OrderRow/OrderRows';
 
 const Ditails = (props) => {
     const { _id, title, price, img, description } = useLoaderData();
     const { user } = useContext(AuthContext)
+    const [orders, setOrders] = useState([]);
+    console.log(orders)
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -46,6 +49,12 @@ const Ditails = (props) => {
             .catch(error => console.error(error))
     }
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setOrders(data))
+    }, [user?.email])
+
     return (
         <div className='container  m-auto'>
             {/* service details part */}
@@ -72,7 +81,7 @@ const Ditails = (props) => {
                 <div>
                     <div className='text-center  mb-10'>
                         <h3 className='text-4xl font-bold'>Enter your info</h3>
-                        <p className='pt-5 text-1xl uppercase'> I am so pleased you have found my online home!</p>
+                        <p className='pt-5 text-1xl uppercase'> Enter your information and add review</p>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div>
@@ -93,8 +102,27 @@ const Ditails = (props) => {
                     </form>
                 </div>
                 {/* reviw part */}
+                <th></th>
                 <div>
-                    review
+                    <div className='text-center mt-14  mb-7'>
+                        <h3 className='text-4xl font-bold'>Total Review</h3>
+                        <p className='pt-2 text-1xl uppercase'> I am so pleased you have found all review</p>
+                    </div>
+                    <div className="overflow-x-auto w-full">
+                        <table className="table z-0 w-full">
+                            <thead>
+                                <tr>
+                                    <th>Picture </th>
+                                    <th>Name</th>
+                                    <th>Message</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {orders?.map(order => <OrderRows key={order._id} order={order}></OrderRows>)}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
