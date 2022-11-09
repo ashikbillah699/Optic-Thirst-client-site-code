@@ -14,7 +14,7 @@ const Services = () => {
     return (
         <div className=' container m-auto my-20'>
 
-            <div className='text-center'>
+            <div className='text-center mb-10'>
                 <h3 className='text-4xl font-bold'>My Click service</h3>
                 <p className='pt-5 text-1xl uppercase'> I am so pleased you have found my online home!</p>
             </div>

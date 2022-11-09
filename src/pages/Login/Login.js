@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -51,6 +51,7 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+                            <p className='text-sm text-center pt-3'>New to Optic Thirst <Link className='text-amber-500' to='/signup'>Sign up</Link></p>
                         </div>
                     </div>
                     <div className="text-center lg:text-left">

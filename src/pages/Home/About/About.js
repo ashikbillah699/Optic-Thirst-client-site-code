@@ -9,7 +9,7 @@ const About = () => {
                 <div>
                     <h1 className="text-4xl font-bold">ABOUT ME</h1>
                     <p className="py-6">YOU KNOW YOU WANT GREAT IMAGES...</p>
-                    <p className="py-6 leading-7	">Hi, I am Nat from Mr Ashik Photography. I am so pleased you have found my online home!
+                    <p className="py-6 leading-7 font-extralight	">Hi, I am Nat from Mr Ashik Photography. I am so pleased you have found my online home!
                         I am a multi-award-winning Wedding and Family lifestyle photographer.
                         I believe your love story is worth capturing not only for you but your future generations to come and it's my job to create images that mean the world to you.
                         I capture your life story from first loves to last loves. Creating Art. I never miss the important moments that will be treasured for generations to come.
