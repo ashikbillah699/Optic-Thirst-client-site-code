@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import OrderRows from './OrderRow/OrderRows';
 
@@ -7,7 +7,6 @@ const Ditails = (props) => {
     const { _id, title, price, img, description } = useLoaderData();
     const { user } = useContext(AuthContext)
     const [orders, setOrders] = useState([]);
-    console.log(orders)
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -101,29 +100,45 @@ const Ditails = (props) => {
                         </div>
                     </form>
                 </div>
+
                 {/* reviw part */}
-                <th></th>
-                <div>
-                    <div className='text-center mt-14  mb-7'>
-                        <h3 className='text-4xl font-bold'>Total Review</h3>
-                        <p className='pt-2 text-1xl uppercase'> I am so pleased you have found all review</p>
-                    </div>
-                    <div className="overflow-x-auto w-full">
-                        <table className="table z-0 w-full">
-                            <thead>
-                                <tr>
-                                    <th>Picture </th>
-                                    <th>Name</th>
-                                    <th>Message</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {orders?.map(order => <OrderRows key={order._id} order={order}></OrderRows>)}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+
+                {
+                    user?.email ?
+                        <>
+                            <div>
+                                <div className='text-center mt-14  mb-7'>
+                                    <h3 className='text-4xl font-bold'>Total Review</h3>
+                                    <p className='pt-2 text-1xl uppercase'> I am so pleased you have found all review</p>
+                                </div>
+                                <div className="overflow-x-auto w-full">
+                                    <table className="table z-0 w-full">
+                                        <thead>
+                                            <tr>
+                                                <th>Picture </th>
+                                                <th>Name</th>
+                                                <th>Message</th>
+                                                <th>Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {orders?.map(order => <OrderRows key={order._id} order={order}></OrderRows>)}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </>
+                        :
+                        <>
+                            <div className='my-20 text-center'>
+                                <Link to='/login'><button className="btn btn-outline">Login</button></Link>
+
+                                <p className='text-2xl text-red-600 pt-10'>Please login to add a review</p>
+
+                            </div>
+
+                        </>
+                }
             </div>
         </div>
     );

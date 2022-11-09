@@ -1,11 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
     const { createSignUp } = useContext(AuthContext)
     const [error, setError] = useState('');
-    const navigate = useNavigate()
 
     const handleSignUp = event => {
         event.preventDefault()
@@ -20,7 +19,6 @@ const SignUp = () => {
                 const user = result.user;
                 setError('')
                 console.log(user);
-                navigate('/')
             })
             .catch(error => {
                 console.error(error)
