@@ -1,6 +1,5 @@
 [
     {
-        "_id": "635a0c0b64a6d231228942ae",
         "service_id": "04",
         "title": "Sunrise",
         "img": "https://i.ibb.co/8dxNx8C/sunrise.jpg",
@@ -26,7 +25,6 @@
         ]
     },
     {
-        "_id": "635a0c0b64a6d231228942af",
         "service_id": "05",
         "title": "skypoint observation deck",
         "img": "https://images.pexels.com/photos/786357/pexels-photo-786357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -52,7 +50,6 @@
         ]
     },
     {
-        "_id": "635b591a1dafe382a9da8c96",
         "service_id": "01",
         "title": "Wedding",
         "img": "https://i.ibb.co/fD18Pgh/weeding.jpg",
@@ -78,7 +75,6 @@
         ]
     },
     {
-        "_id": "635b5afc1dafe382a9da8c98",
         "service_id": "02",
         "title": "SUNSET MUSIC FESTIVAL",
         "img": "https://i.ibb.co/FKwCQGj/nitti-gritti-b2b-wuki-smf-2021-brphotoco-5.jpg",
@@ -104,7 +100,6 @@
         ]
     },
     {
-        "_id": "635b5b691dafe382a9da8c99",
         "service_id": "03",
         "title": "Autós tudástár",
         "img": "https://wallpaperaccess.com/full/1079101.jpg",
@@ -130,7 +125,6 @@
         ]
     },
     {
-        "_id": "635b5ba51dafe382a9da8c9a",
         "service_id": "06",
         "title": "Moon Reflected",
         "img": "https://i.pinimg.com/736x/de/e6/8c/dee68c491c5da65b8524516e92a6ee25--new-moon-free-books.jpg",
