@@ -78,35 +78,36 @@ const Ditails = () => {
             </div>
             <div>
                 {/* chackOut part */}
-                <div>
-                    <div className='text-center  mb-10'>
-                        <h3 className='text-4xl font-bold'>Enter your info</h3>
-                        <p className='pt-5 text-1xl uppercase'> Enter your information and add review</p>
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-5'>
-                                <input name='fastname' type="text" placeholder="First name" className="input input-bordered w-full" />
-                                <input name='lastname' type="text" placeholder="Last name" className="input input-bordered w-full" />
-                            </div>
-                            <input name='photo' type="text" placeholder="Photo URL" className="input input-bordered w-full" />
-                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 my-5'>
-                                <input name='phone' type="number" placeholder="Phone number" className="input input-bordered w-full" />
-                                <input name='email' type="email" placeholder="Email" defaultValue={user?.email} className="input input-bordered w-full" readOnly />
-                            </div>
-                            <textarea name='message' className="textarea textarea-bordered w-full" placeholder="Message"></textarea>
-                            <div className='text-center mt-5'>
-                                <input type="submit" className="btn btn-active btn-ghost m-auto" value="Add Review" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                {/* reviw part */}
-
                 {
                     user?.email ?
                         <>
+                            <div>
+                                <div className='text-center  mb-10'>
+                                    <h3 className='text-4xl font-bold'>Enter your info</h3>
+                                    <p className='pt-5 text-1xl uppercase'> Enter your information and add review</p>
+                                </div>
+                                <form onSubmit={handleSubmit}>
+                                    <div>
+                                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-5'>
+                                            <input name='fastname' type="text" placeholder="First name" className="input input-bordered w-full" required />
+                                            <input name='lastname' type="text" placeholder="Last name" className="input input-bordered w-full" required />
+                                        </div>
+                                        <input name='photo' type="text" placeholder="Photo URL" className="input input-bordered w-full" />
+                                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 my-5'>
+                                            <input name='phone' type="number" placeholder="Phone number" className="input input-bordered w-full" required />
+                                            <input name='email' type="email" placeholder="Email" defaultValue={user?.email} className="input input-bordered w-full" readOnly />
+                                        </div>
+                                        <textarea name='message' className="textarea textarea-bordered w-full" placeholder="Message"></textarea>
+                                        <div className='text-center mt-5'>
+                                            <input type="submit" className="btn btn-active btn-ghost m-auto" value="Add Review" required />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            {/* reviw part */}
+
+
                             <div>
                                 <div className='text-center mt-14  mb-7'>
                                     <h3 className='text-4xl font-bold'>Total Review</h3>

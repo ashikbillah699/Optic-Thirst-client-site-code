@@ -9,7 +9,7 @@ const MyGallary = () => {
                 <h3 className='text-4xl font-bold uppercase'>injoy my gallery</h3>
 
             </div>
-            <div class="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-4">
                 <img src="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
                 <img src="https://images.pexels.com/photos/1299391/pexels-photo-1299391.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
                 <img src="https://images.pexels.com/photos/2747248/pexels-photo-2747248.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />

@@ -8,7 +8,7 @@ const Services = () => {
     useEffect(() => {
         fetch('http://localhost:5000/services')
             .then(res => res.json())
-            .then(data => setServices(data.slice(3)))
+            .then(data => setServices(data.slice(0, 3)))
     }, [])
 
     return (

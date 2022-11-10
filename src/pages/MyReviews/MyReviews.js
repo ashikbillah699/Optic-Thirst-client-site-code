@@ -57,7 +57,6 @@ const MyReviews = () => {
                                 </>
                                 :
                                 <tr className='text-4xl text-red-600 m-auto text-center'><td>No reviews were added'</td></tr>
-
                         }
 
                     </tbody>

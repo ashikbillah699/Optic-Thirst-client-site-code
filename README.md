@@ -1,3 +1,21 @@
+# Optic Thirst
+link:
+
+## Features
+
+### 1. install react router.
+### 2. tooltip and toggle button.
+### 3. used react bootstrap.
+### 4. used many component.
+### 5. ueed favicon.
+### 6. used dynamic-API.
+### 7. react fontawsome Icon.
+### 8. used node server
+### 9 Mongodb used
+
+## 8. website purpose:
+Photographers use a variety of photographic equipment to capture events, people, objects or scenes for records, art or commercial use. Many photographers begin their careers as photographic assistants, setting up lights and stands, arranging transport and occasionally acting as a 'second shooter'.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

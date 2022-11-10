@@ -11,7 +11,7 @@ const ServiceCart = ({ service }) => {
                 <h2 className="card-title  text-2xl font-extralight	">{title}</h2>
                 <p className=' font-extralight py-1 text-sm		'>
                     {
-                        description.length > 100 ?
+                        description?.length > 100 ?
                             <> {description.slice(0, 100) + '...'}<Link className='text-sky-800' to={`/details/${_id}`}>Read more details</Link></>
                             :
                             <>{description}</>

@@ -33,7 +33,18 @@ const MyReviewCart = ({ order, handleDelete }) => {
             </td>
             <td>{message}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">Edit</button>
+
+                <label htmlFor="my-modal" className="btn">Edit</label>
+                <input type="checkbox" id="my-modal" className="modal-toggle" />
+                <div className="modal">
+                    <div className="modal-box">
+                        <h3 className="font-bold text-lg">Edit</h3>
+                        <p className="py-4">You can editt and update</p>
+                        <div className="modal-action">
+                            <label htmlFor="my-modal" className="btn">update!</label>
+                        </div>
+                    </div>
+                </div>
             </th>
             <th>
                 <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
