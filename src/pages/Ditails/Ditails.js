@@ -5,7 +5,7 @@ import OrderRows from './OrderRow/OrderRows';
 
 const Ditails = () => {
     const { _id, title, price, img, description } = useLoaderData();
-    const { user, logOut } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [orders, setOrders] = useState([]);
 
     const handleSubmit = event => {
@@ -50,18 +50,8 @@ const Ditails = () => {
     }
 
     useEffect(() => {
-        fetch(`https://optic-thirst-server.vercel.app/orders?email=${user?.email}`, {
-            headers: {
-                authorazation: `Bearer ${localStorage.getItem('token')}`
-            }
-        })
-            .then(res => {
-                if (res.status === 401 || res.status === 403) {
-                    logOut()
-                }
-                return res.json()
-
-            })
+        fetch(`https://optic-thirst-server.vercel.app/orders?email=${user?.email}`)
+            .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])
 
