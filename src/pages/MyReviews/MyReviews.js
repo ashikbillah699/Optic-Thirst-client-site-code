@@ -56,7 +56,7 @@ const MyReviews = () => {
                                     {orders?.map(order => <MyReviewCart key={order._id} handleDelete={handleDelete} order={order}></MyReviewCart>)}
                                 </>
                                 :
-                                <tr className='text-4xl text-red-600 text-center'><td>No reviews were added'</td></tr>
+                                <tr className='text-4xl text-red-600 m-auto text-center'><td>No reviews were added'</td></tr>
 
                         }
 
