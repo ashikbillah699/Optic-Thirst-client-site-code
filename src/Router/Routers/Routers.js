@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <Ditails></Ditails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://optic-thirst-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/login',

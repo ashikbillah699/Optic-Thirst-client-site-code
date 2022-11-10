@@ -7,7 +7,7 @@ const MyReviews = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://optic-thirst-server.vercel.app/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])
@@ -15,7 +15,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to cancle this review?')
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://optic-thirst-server.vercel.app/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

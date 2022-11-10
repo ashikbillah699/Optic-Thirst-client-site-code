@@ -5,7 +5,7 @@ const MyReviewCart = ({ order, handleDelete }) => {
     const [review, setReview] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://optic-thirst-server.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [service])

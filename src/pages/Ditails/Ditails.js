@@ -31,7 +31,7 @@ const Ditails = () => {
 
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://optic-thirst-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +50,7 @@ const Ditails = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://optic-thirst-server.vercel.app/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])
